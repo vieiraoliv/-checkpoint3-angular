@@ -1,0 +1,10 @@
+<div class="card mb-3">
+  <div class="card-body">
+    <h5 class="card-title">{{ veiculo.marca }} {{ veiculo.modelo }}</h5>
+    <p class="card-text">Ano: {{ veiculo.ano }}</p>
+    <p class="card-text">Placa: {{ veiculo.placa }}</p>
+    <button class="btn btn-primary" (click)="detalhes.emit(veiculo)">
+      Detalhes
+    </button>
+  </div>
+</div>

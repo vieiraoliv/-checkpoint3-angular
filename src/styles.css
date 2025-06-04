@@ -1,1 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
+/* estilos globais */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #a7a7a7;
+}
+
+h2, h3, h5 {
+  color: #333;
+}
+.custom-navbar {
+  background-color: #0d3b66;
+}

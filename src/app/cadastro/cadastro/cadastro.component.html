@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="col-12 mb-3">
+    <h2 class="mt-3">Cadastro de Veículo</h2>
+  </div>
+</div>
+<form [formGroup]="cadastroForm" (ngSubmit)="onSubmit()">
+  <div class="mb-3">
+    <label for="marca" class="form-label">Marca</label>
+    <input id="marca" type="text" class="form-control" formControlName="marca">
+    <div *ngIf="cadastroForm.get('marca')?.touched && cadastroForm.get('marca')?.invalid" class="text-danger">
+      Marca é obrigatória.
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label for="modelo" class="form-label">Modelo</label>
+    <input id="modelo" type="text" class="form-control" formControlName="modelo">
+    <div *ngIf="cadastroForm.get('modelo')?.touched && cadastroForm.get('modelo')?.invalid" class="text-danger">
+      Modelo é obrigatório.
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label for="ano" class="form-label">Ano</label>
+    <input id="ano" type="number" class="form-control" formControlName="ano">
+    <div *ngIf="cadastroForm.get('ano')?.touched && cadastroForm.get('ano')?.invalid" class="text-danger">
+      Ano deve ser entre 1900 e {{ currentYear }}.
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label for="placa" class="form-label">Placa</label>
+    <input id="placa" type="text" class="form-control" formControlName="placa" placeholder="ABC-1234">
+    <div *ngIf="cadastroForm.get('placa')?.touched && cadastroForm.get('placa')?.invalid" class="text-danger">
+      Placa inválida. Formato: ABC-1234.
+    </div>
+  </div>
+
+  <button class="btn btn-success" type="submit" [disabled]="cadastroForm.invalid">
+    Cadastrar
+  </button>
+</form>
